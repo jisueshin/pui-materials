@@ -10,7 +10,7 @@ body {
     width: 450px;
     height: auto;
     border-radius: 8px;
-    background-color: green;
+    background-color: #212121;
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -30,4 +30,28 @@ body {
     width: 70px;
     height: 70px;
     border-radius: 5px;
+}
+
+.btn-delete {
+    width: 30px;
+    height: 30px;
+
+    margin-top: 15px;
+    padding: 0;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #595959;
+    background-color: #212121;
+
+    border: 2px solid #595959;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.btn-delte:hover {
+    color: #dddddd;
+    background-color: #393939;
+    border: 2px solid #dddddd;
 }
