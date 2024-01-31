@@ -30,6 +30,8 @@ body {
 .footer {
   width: 100%;
   background-color: teal;
+
+  display: flex;
 }
 
 .footer-element {
@@ -37,4 +39,6 @@ body {
   color: white;
   margin: 8px;
   padding: 4px;
+
+  flex: 1;
 }
