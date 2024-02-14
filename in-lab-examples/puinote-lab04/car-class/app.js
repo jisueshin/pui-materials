@@ -14,6 +14,7 @@ class Car {
     this.element = element;
 
     const btnDrive = this.element.querySelector("btnDrive");
+    const btnBrake = this.element.querySelector("btnDrive");
     btnDrive.onclick = this.drive.bind(this);
   }
 
@@ -40,6 +41,8 @@ class Car {
   }
 
   brake() {
+    this.isMoving = true;
+    this.updateElement();
     // implement this
   }
 }
