@@ -9,6 +9,12 @@ class Car {
 
   constructor(model, year, element) {
     /* Initialize the car's properties here */
+    this.model = model;
+    this.year = year;
+    this.element = element;
+
+    const btnDrive = this.element.querySelector("btnDrive");
+    btnDrive.onclick = this.drive.bind(this);
   }
 
   /**
@@ -19,9 +25,17 @@ class Car {
    */
   updateElement() {
     // implement this
+    let nameElement = this.element.querySelector("p");
+    nameElement.innerText = this.model + "" + this.year;
+    if (this.isMoving) {
+      this.element.classList.add("moving-car");
+      nameElement.innerText += " is Moving";
+    }
   }
 
   drive() {
+    this.isMoving = true;
+    this.updateElement();
     // implement this
   }
 
@@ -35,5 +49,7 @@ class Car {
  model "Chevy Corvette", the year "2022", and the car element. Then call
  updateElement().
 */
-let carElement = null; // implement
-let theCar = null; // implement
+let carElement = document.querySelector(".car"); // implement
+//".car" is class in html
+let theCar = new Car("Chevy Corvette", "2022", carElement); // implement
+theCar.updateElement(); 
