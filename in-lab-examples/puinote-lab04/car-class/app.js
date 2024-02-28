@@ -1,5 +1,9 @@
 /* A class representing a car that can start and stop moving. */
 class Car {
+  model;
+  year;
+  element;
+  isMoving = false;
   /* Declare four properties:
    * model - the model name of the car
    * year - the year of the car
@@ -13,9 +17,11 @@ class Car {
     this.year = year;
     this.element = element;
 
-    const btnDrive = this.element.querySelector("btnDrive");
-    const btnBrake = this.element.querySelector("btnDrive");
+    const btnDrive = this.element.querySelector(".btnDrive");
+    const btnBrake = this.element.querySelector(".btnBrake");
+
     btnDrive.onclick = this.drive.bind(this);
+    btnBrake.onclick = this.brake.bind(this);
   }
 
   /**
@@ -27,10 +33,13 @@ class Car {
   updateElement() {
     // implement this
     let nameElement = this.element.querySelector("p");
-    nameElement.innerText = this.model + "" + this.year;
+    nameElement.innerText = this.model + " " + this.year;
     if (this.isMoving) {
       this.element.classList.add("moving-car");
       nameElement.innerText += " is Moving";
+    }
+    else {
+      this.element.classList.remove("moving-car");
     }
   }
 
